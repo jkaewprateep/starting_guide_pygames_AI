@@ -39,24 +39,24 @@ Starting guild for Pygame AI training and play
 x = 100
 y = 100
 import os
-os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x,y)
+os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x,y)   # 🐑💬 ➰ For starting position of Pygame window
 
 import ple
 from ple.games.flappybird import FlappyBird
 from ple import PLE
-from pygame.constants import K_w, K_a, K_d, K_s, K_h 
+from pygame.constants import K_w, K_a, K_d, K_s, K_h   # 🐑💬 ➰ For gameplay button value enums
 
-import os
+import os                                              # 🐑💬 ➰ For file management
 from os.path import exists
 
-import tensorflow as tf
+import tensorflow as tf                                # 🐑💬 ➰ For machine learning model
 ```
 
 🧸💬 Learning parameters  </br>
 ```
-learning_rate = 0.0001
-momentum = 0.4
-batch_size=1
+learning_rate = 0.0001                                # 🐑💬 ➰ To optimize how small value changes in AI training
+momentum = 0.4                                        # 🐑💬 ➰ To optimize how large the bouncing momentum
+batch_size=1                                          # 🐑💬 ➰ Keep it default if you do not change dataset number rows
 ```
 
 🧸💬 Guidling function 1
@@ -64,7 +64,7 @@ batch_size=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 : Class / Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-def random_action( ): 
+def random_action( ):                                 # 🐑💬 ➰ By random input AI learn to response to reward or step value
 	
 	temp = tf.random.normal([1, 2], 0.2, 0.8, tf.float32)
 	temp = tf.math.multiply(temp, tf.constant([ 0.3, 0.7 ], shape=(2, 1), dtype=tf.float32))
@@ -76,7 +76,7 @@ def random_action( ):
 
 🧸💬 Prediction function
 ```
-def predict_action( DATA ):
+def predict_action( DATA ):                           # 🐑💬 ➰ From training model predict result from input value
 	
 	# temp = DATA[0,:,:,:,:]
 	# print( temp.shape )
@@ -92,7 +92,7 @@ def predict_action( DATA ):
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 : Model Initialize
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-input_shape = (5, 1)
+input_shape = (5, 1)                                  # 🐑💬 ➰ Create model, optimizer and loss evaluation function and compile
 
 model = tf.keras.models.Sequential([
     tf.keras.layers.InputLayer(input_shape=input_shape),
@@ -134,7 +134,7 @@ model.compile(optimizer=optimizer, loss=lossfn, metrics=['accuracy'])
 
 🧸💬 Game environment
 ```
-game = FlappyBird(width=216, height=384)
+game = FlappyBird(width=216, height=384)               # 🐑💬 ➰ Create game play environment for our experiment
 p = PLE(game, fps=30, display_screen=True
 actions = { "none_1": None, "up___1": K_w };
 
@@ -145,7 +145,7 @@ nb_frames = 1000000000
 
 🧸💬 Model training requirements
 ```
-history = [];
+history = [];                                          # 🐑💬 ➰ Management file and model training log
 
 checkpoint_path = "C:\\temp\\python\\models\\" + os.path.basename(__file__).split('.')[0] + "\\TF_DataSets_01.weights.h5"
 checkpoint_dir = os.path.dirname(checkpoint_path)
@@ -161,7 +161,7 @@ if exists(checkpoint_path) :
 
 🧸💬 Game play and model training
 ```
-for i in range(nb_frames):
+for i in range(nb_frames):                             # 🐑💬 ➰ Our task runner
     
     if p.game_over():
         # input('pause')
