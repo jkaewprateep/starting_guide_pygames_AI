@@ -9,8 +9,8 @@ Starting guild for Pygame AI training and play
     <b> Pygame and Tensorflow AI machine learning </b> </br>
     <b> ( Picture from Internet ) </b> </br>
 </p>
-</br>
-</br>
+
+[Flappybird games]( https://pygame-learning-environment.readthedocs.io/en/latest/user/games/flappybird.html#rewards )
 
 <p align="center" width="100%">
     <img width="25%" src="https://github.com/jkaewprateep/starting_guide_pygames_AI/blob/main/2000%20hits-training.gif"></br>
