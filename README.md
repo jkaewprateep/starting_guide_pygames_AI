@@ -26,7 +26,7 @@ Starting guild for Pygame AI training and play
 </br>
 </br>
 
-🧸💬 Because of my machine is slow response ( my sister's University Laptop ) and screensize cannot fit the game resolution, use of the command 
+🧸💬 Because my machine is slow response ( my sister's University Laptop ) and screen size cannot fit the game resolution, use of the command ```os.environ['SDL_VIDEO_WINDOW_POS']``` to set PyGame environment requirements. </br>
 ```
 x = 100
 y = 100
