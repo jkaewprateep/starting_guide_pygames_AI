@@ -93,7 +93,8 @@ def predict_action( DATA ):                           # 🐑💬 ➰ From traini
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 : Model Initialize
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-input_shape = (5, 1)                                  # 🐑💬 ➰ Create model, optimizer and loss evaluation function and compile
+input_shape = (5, 1)                                  # 🐑💬 ➰ Create model, optimizer
+                                                      # and loss evaluation function and compile
 
 model = tf.keras.models.Sequential([
     tf.keras.layers.InputLayer(input_shape=input_shape),
