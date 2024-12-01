@@ -170,19 +170,34 @@ if exists(checkpoint_path) :
 🧸💬 Gameplay and model training </br>
 👧💬 🎈 Start and run our task to have our auto-pilot from a simple AI-machine learning model. </br>
 ```
-for i in range(nb_frames):                             # 🐑💬 ➰ Our task runner
+p.init()
+scores = 0.0;
+reward = 0.0
+nb_frames = 1000000000
+action = 0;
+
+for i in range(nb_frames):
     
     if p.game_over():
         # input('pause')
-        p.reset_game()    
+        p.reset_game() 
+        scores = 0.0;
+        reward = 0.0;
+        DATA = tf.constant([scores, _gamestate["player_y"] - int(_gamestate["next_pipe_bottom_y"]) ]
+                       , shape=(1,1,2,1))
+        LABEL = tf.constant([action], shape=(1,1,1))     
+        dataset = tf.data.Dataset.from_tensor_slices((DATA, LABEL)) 
+        history = model.fit(dataset, epochs=10)
+        model.save_weights(checkpoint_path)              
     
     ## data row
     _gamestate = p.getGameState();
 
-    DATA = tf.constant([ _gamestate["next_pipe_dist_to_player"], _gamestate["player_y"],
-                            int(_gamestate["next_pipe_bottom_y"]), reward, i ]
-                       , shape=(1,1,5,1))
-    LABEL = tf.constant([random_action()], shape=(1,1,1)) 
+    DATA = tf.constant([scores, _gamestate["player_y"] - int(_gamestate["next_pipe_bottom_y"]) ]
+                       , shape=(1,1,2,1))
+    LABEL = tf.constant([action], shape=(1,1,1)) 
+    # print( DATA.shape, LABEL )
+    # input("pause")
 
     """""""""""""""""""""""""""""""""""""""""""""""""""""""""
     : DataSet
@@ -197,23 +212,37 @@ for i in range(nb_frames):                             # 🐑💬 ➰ Our task r
     model.save_weights(checkpoint_path)
 
     action = predict_action(DATA);
+    # print(action)   
     
-    if i < 2000 : # for training guild function 2
+    if i < 600 :      
         if _gamestate["player_y"] - int(_gamestate["next_pipe_bottom_y"]) > -35 :
             action = 1;
         else :
             action = 0;
-        
-    if i % 10000 == 0 :
-        i == 0;
+    elif i < 800 :
+        if i % 4 == 0 :
+            action = random_action( );
+    elif i < 900 :
+        if i % 6 == 0 :
+            action = random_action( );    
 
     reward = p.act(list(actions.values())[action])
+    scores = scores + ( reward * 10 );
     
-    str_mode = "AI machine"; # game play mode
-    if i < 2000 :
-        str_mode = "guidling." # game play mode
-    print("=============================================================================== \
-                    ================================>", str_mode);
+    str_mode = "AI machine";
+    if i < 600 :
+        str_mode = "guidling."
+    print("================================================================================ \
+		===============================>", str_mode);
+    
+    if i % 1000 == 0 :
+        i == 0;
+    
+    if reward >= 1 :
+        print("###################################################################") \
+        print("#{reward}#{reward}#{reward}#{reward}#{reward}#{reward}#{reward}#{reward}########
+		###########################".replace("{reward}", str(reward)))
+        print("###################################################################")
 ```
 
 ---
