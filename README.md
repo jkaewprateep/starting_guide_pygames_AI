@@ -25,3 +25,21 @@ Starting guild for Pygame AI training and play
 </p>
 </br>
 </br>
+
+🧸💬 Because of my machine is slow response ( my sister's University Laptop ) and screensize cannot fit the game resolution, use of the command 
+```
+x = 100
+y = 100
+import os
+os.environ['SDL_VIDEO_WINDOW_POS'] = "%d,%d" % (x,y)
+
+import ple
+from ple.games.flappybird import FlappyBird
+from ple import PLE
+from pygame.constants import K_w, K_a, K_d, K_s, K_h 
+
+import os
+from os.path import exists
+
+import tensorflow as tf
+```
