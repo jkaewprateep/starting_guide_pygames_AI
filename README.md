@@ -52,14 +52,16 @@ from os.path import exists
 import tensorflow as tf                                # 🐑💬 ➰ For machine learning model
 ```
 
-🧸💬 Learning parameters  </br>
+🧸💬 Learning parameters are important and they are success factors.  </br>
+🐐💬 We select momentum because it turns into a solution faster than normal gradient descent and we do not require absolute value because it changes in real time. </br>
 ```
 learning_rate = 0.0001                                # 🐑💬 ➰ To optimize how small value changes in AI training
 momentum = 0.4                                        # 🐑💬 ➰ To optimize how large the bouncing momentum
 batch_size=1                                          # 🐑💬 ➰ Keep it default if you do not change dataset number rows
 ```
 
-🧸💬 Guidling function 1
+🧸💬 Guidling function 1 requirement for reinforcement AI machine learning. </br
+🦭💬 In reinforcement AI machine learning we use a small portion as possible because all solutions need to be figured out by the AI machine learning model.  </br>
 ```
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 : Class / Functions
@@ -75,7 +77,8 @@ def random_action( ):                                 # 🐑💬 ➰ By random i
 	return action
 ```
 
-🧸💬 Prediction function
+🧸💬 Prediction function is required to use model optimize our solution. </br>
+🐐💬 Prediction is estimation from experiment results and input at the time it is not an absolute solution but a tool for experiments. </br>
 ```
 def predict_action( DATA ):                           # 🐑💬 ➰ From training model predict result from input value
 	
@@ -88,7 +91,8 @@ def predict_action( DATA ):                           # 🐑💬 ➰ From traini
 	return int(tf.math.argmax(score))
 ```
 
-🧸💬 Model requirements
+🧸💬 Model requirements and solution proportional method. </br>
+🐯💬 Culture-INFO, we can optimize the trained model with different training methods and optimizers but carefully because you need to know what the model objective and what your goal for success is⁉️ There is a pre-build learning model and you can adapt it to your solution. </br>
 ```
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 : Model Initialize
@@ -134,7 +138,8 @@ lossfn = tf.keras.losses.MeanSquaredError(
 model.compile(optimizer=optimizer, loss=lossfn, metrics=['accuracy'])
 ```
 
-🧸💬 Game environment
+🧸💬 Game environment requirements for the setup of correct input and expectation for AI machine learning. </br>
+🐐💬 Because they are machine setups is important to reduce more variables to it input then we perform experiments with a controlled system. </br>
 ```
 game = FlappyBird(width=216, height=384)               # 🐑💬 ➰ Create game play environment for our experiment
 p = PLE(game, fps=30, display_screen=True
@@ -145,7 +150,8 @@ reward = 0.0
 nb_frames = 1000000000
 ```
 
-🧸💬 Model training requirements
+🧸💬 Model training requirements, re-use of the model possible with save and load method. </br>
+🦭💬 Backup and versions are important in software development where whereas AI machine learning software development also performs the CI/CD process.  </br>
 ```
 history = [];                                          # 🐑💬 ➰ Management file and model training log
 
@@ -161,7 +167,8 @@ if exists(checkpoint_path) :
 	print("model load: " + checkpoint_path)
 ```
 
-🧸💬 Game play and model training
+🧸💬 Gameplay and model training </br>
+👧💬 🎈 Start and run our task to have our auto-pilot from a simple AI-machine learning model. </br>
 ```
 for i in range(nb_frames):                             # 🐑💬 ➰ Our task runner
     
