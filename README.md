@@ -64,7 +64,8 @@ batch_size=1                                          # 🐑💬 ➰ Keep it def
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 : Class / Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-def random_action( ):                                 # 🐑💬 ➰ By random input AI learn to response to reward or step value
+def random_action( ):                                 # 🐑💬 ➰ By random input AI learn to response to reward
+                                                      # or step value
 	
 	temp = tf.random.normal([1, 2], 0.2, 0.8, tf.float32)
 	temp = tf.math.multiply(temp, tf.constant([ 0.3, 0.7 ], shape=(2, 1), dtype=tf.float32))
