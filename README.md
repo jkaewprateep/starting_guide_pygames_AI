@@ -12,6 +12,12 @@ Starting guild for Pygame AI training and play
 
 [Flappybird games]( https://pygame-learning-environment.readthedocs.io/en/latest/user/games/flappybird.html#rewards )
 
+🧸💬 Because running the machine requires limited resources and we do not use an acceleration program, the learning efficiency method was selected by creating guiding algorithms. These algorithms do not always pass all the open gates, but machine learning will fill these gaps to improve performance algorithms. </br>
+🐑💬 ➰ Some statistics need to be remembered before starting or you can read basics mathematics from [Basics-statistics-for-AI-machine-learning-study]( https://github.com/jkaewprateep/Basics-statistics-for-AI-machine-learning-study/blob/main/README.md ) </br>
+🦭💬 loss value is an evaluation of our current learning compared to the target it is a relationship of rational values because of comparing continuous sequences of data input, less but not too small indicating that the machine learning model may understand the target predicting pattern. A too-small value of loss function evaluation indicates the model remembers the step not prediction from input. </br>
+🐯💬 Culture-INFO, we do not modify the game's play except they are meaning in some improvement method. </br>
+🦁💬 Algorithm and training model results from work with input hours, resources, and labours ( performance and hours ) they are intellectual property and from this example, you can train a model by your self-machine. </br>
+
 <p align="center" width="100%">
     <img width="25%" src="https://github.com/jkaewprateep/starting_guide_pygames_AI/blob/main/2000%20hits-training.gif"></br>
     <b> Training 2,000 times action by guilding algorithms </b> </br>
