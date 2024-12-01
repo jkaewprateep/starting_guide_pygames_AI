@@ -16,7 +16,7 @@ Starting guild for Pygame AI training and play
 🐑💬 ➰ Some statistics need to be remembered before starting or you can read basics mathematics from [Basics-statistics-for-AI-machine-learning-study]( https://github.com/jkaewprateep/Basics-statistics-for-AI-machine-learning-study/blob/main/README.md ) </br>
 🦭💬 loss value is an evaluation of our current learning compared to the target it is a relationship of rational values because of comparing continuous sequences of data input, less but not too small indicating that the machine learning model may understand the target predicting pattern. A too-small value of loss function evaluation indicates the model remembers the step not prediction from input. </br>
 🐯💬 Culture-INFO, we do not modify the game's play except they are meaning in some improvement method. </br>
-🦁💬 Algorithm and training model results from work with input hours, resources, and labours ( performance and hours ) they are intellectual property and from this example, you can train a model by your self-machine. </br>
+🦁💬 Algorithm and training model results from work with input hours, resources, and labors ( performance and hours ) they are intellectual property and from this example, you can train a model by your self-machine. </br>
 
 <p align="center" width="100%">
     <img width="25%" src="https://github.com/jkaewprateep/starting_guide_pygames_AI/blob/main/2000%20hits-training.gif"></br>
@@ -24,6 +24,8 @@ Starting guild for Pygame AI training and play
 </p>
 </br>
 </br>
+
+🐐💬 Working hours, resources, and optimization are the input of the method AI machine learning when it may be a success project but carefully absolute the target and requirements. </br>
 
 <p align="center" width="100%">
     <img width="25%" src="https://github.com/jkaewprateep/starting_guide_pygames_AI/blob/main/FlappyBird_small.gif"></br>
